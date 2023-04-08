@@ -7,28 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DR-CRUD Automotive</title>
   </head>
-  <body class="text-gray-900">
+  <body class="text-gray-200 bg-gray-800">
 
     <div><!-- content wrapper -->
      <div>
       <nav class="bg-red-400">
-        <h1 class = "text-red-900 text-4xl font-bold uppercase"><a href="/">DR-CRUD Automotive</a></h1>
+        <div>
+          <img src="https://cdn-icons-png.flaticon.com/512/1300/1300302.png" alt="logo" class="w-20 h-20">
+          <h1 class = "text-red-800 text-4xl font-bold  uppercase"><a href="/">DR-CRUD Automotive</a></h1>
+        </div>
         <ul>
           <li class="">
-            <a href="/about">
+            <a class="hover:text-red-900 font-semibold text-red-700" href="/about.html">
               <span>
                 About
               </span>
             </a>
           </li>
         </ul>
+          <div >
+            <a class = "hover:text-red-900 font-semibold text-red-600" href="#">Login</a>
+            <a class = "hover:text-red-900 font-semibold text-red-600" href="#">Register</a>
+          </div>
       </nav>
      </div>
-     <main>
-      <div >
-        <a href="#">Login</a>
-        <a href="#">Register</a>
-      </div>
+     <main class="px-12 py-6">
+
       <Header class="text-red-600">
         <h2>
           DR-CRUD 
@@ -37,15 +41,15 @@
           Automotive
         </h3>
       </Header>
-        <div>
+        <div class="mt-8">
           <!-- Cards go here-->
-          <h4 class="font-semibold">Featured</h4>
+          <h4 class="font-semibold mt-12 pb-2 border-b-2 border-red-200">Featured</h4>
           <div>
-            <div>
-              <img src="" alt="">
+            <div class="p-2">
+              <img src="https://nationalcarsales.ca/wp-content/uploads/2019/04/2017-Hyundai-Santa-Fe-636728799301072657_1-690x326.jpg" alt="Red 2017 Hyundai Santa-Fe">
               <div>
-                <span>Test Card</span>
-                <span>Test Card</span>
+                <span class="font-bold">2017 Hyundai Santa-Fe </span>
+                <span>$20,499</span>
               </div>
             </div>
           </div>

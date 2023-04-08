@@ -3,6 +3,3 @@
 @tailwind components;
 @tailwind utilities;
 
-a:hover {
-  color: rgb(19,24,39);
-}

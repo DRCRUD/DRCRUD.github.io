@@ -7,7 +7,8 @@
     "build": "vite build",
     "build-css": "npx tailwindcss -i ./src/assets/main.css -o ./styles.css --watch",
     "preview": "vite preview",
-    "host":"npx live-server --port=8080 --entry-file=index.html"
+    "host": "npx live-server --port=8080 --entry-file=index.html",
+    "test": "run-p build-css host"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.12",
