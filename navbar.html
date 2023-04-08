@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="styles.css">
+
+    <div class=" bg-light border-b-4 border-red-500">
+        <div class="flex flex-wrap">
+          <img src="https://cdn-icons-png.flaticon.com/512/1300/1300302.png" alt="logo" class="w20 h-20">
+          <h1 class = "text-red-800 text-6xl font-bold  uppercase hover bg-gradient-to-br underline underline-offset-8"><a href="/index.html" target="_parent">DR-CRUD Automotive</a></h1>
+        </div>
+        <div class="flex justify-between items-center py-4 px-6 ">
+            <ul class="flex flex-wrap justify-start" id = "pages">
+              <li class="px-1 mx-1" >
+                <a class="hover:text-effect underline-offset-2 font-semibold text-red-500 active:underline" href="/index.html" target="_parent">
+                    <span>
+                        Home
+                    </span>
+                </a>
+              </li>
+              <li class="px-1 mx-1">
+                <a class="hover:text-effect font-semibold text-red-500" href="/about.html" target="_parent">
+                  <span>
+                    About
+                  </span>
+                </a>
+              </li>
+            </ul>
+              <div >
+                <a class = "hover:text-effect font-semibold text-red-600" href="#" target="_parent">Login</a>
+                <a class = "hover:text-effect font-semibold text-red-600" href="#" target="_parent">Register</a>
+            </div>
+        </div>
+<Script>
+    var parenturl = document.referrer;
+    var pages = document.getElementById("pages");
+    var pageItems = pages.getElementsByTagName("li");
+    for (var i = 0; i < pageItems.length; i++) {
+        var pageItem = pageItems[i];
+        var pageLink = pageItem.getElementsByTagName("a")[0];
+        if (pageLink.href == parenturl) {
+            pageLink.classList.add("underline");
+            pageLink.classList.add("decoration-2");
+        }
+    }
+</Script>
