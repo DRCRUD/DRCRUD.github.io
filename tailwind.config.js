@@ -9,8 +9,8 @@ module.exports = {
         "effect": "#631200",
         "light": "#FE9B86",
         "secondary": "#0F047D",
-        "secondary effect": "#09024F",
-        "secondary light": "#6155DC",
+        "secondary-effect": "#09024F",
+        "secondary-light": "#B7CCFA",
 
       }
     },
