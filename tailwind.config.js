@@ -12,6 +12,9 @@ module.exports = {
         "secondary-effect": "#09024F",
         "secondary-light": "#B7CCFA",
 
+      },
+      Text: {
+        
       }
     },
   },
