@@ -1,19 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="en">
-  <head>
+  <head >
     <meta charset="UTF-8">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1300/1300302.png"> <!--Credit to freepic on flaticon-->
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DR-CRUD Automotive</title>
+    <script src="https://unpkg.com/vue@3"></script>
   </head>
   <body class="h-[100%]">
     <div class="bg-gradient-to-tr from-white to-secondary-light"><!-- content wrapper -->
      <div>
-      <iframe src="navbar.html" type="text/html" seamless class=" w-full h-[32%] sm:h-[15%] "></iframe>
+      <iframe src="navbar.html" type="text/html" seamless class=" w-full" id="navbarIframe"></iframe>
      </div>
-     <main class="text-gray-800  ">
-
+     <main class="text-gray-800 px-12 " id="app">
       <Header class="text-red-600 text-center bg-blue-300  border-4 border-gray-400 rounded-xl mx-[29%]">
         <h2 class="text-8xl font-bold">
           DR-CRUD 
@@ -23,27 +24,96 @@
         </h3>
       </Header>
         <div class="mt-8">
-          <div  class = "mt-12 pb-2 border-b-2   border-red-200">
-            <h4 class="text-2xl font-semibold ">Featured</h4>
+          <div  class = "mt-12 pb-2 border-b-2 border-secondary">
+            <h4 class="text-3xl font-semibold text-center text-secondary">Featured</h4>
           </div>
-          <!-- Cards go here-->
           
-          <div>
-            <div class="p-2">
-              <img src="https://nationalcarsales.ca/wp-content/uploads/2019/04/2017-Hyundai-Santa-Fe-636728799301072657_1-690x326.jpg" alt="Red 2017 Hyundai Santa-Fe">
-              <div>
-                <span class="font-bold">2017 Hyundai Santa-Fe </span>
-                <span>$20,499</span>
-              </div>
-            </div>
+          <div class="">
+            <!-- Cards go here-->
+            <ul class="">
+              <li v-for="car in getFeatured" :key="car.featuedLocation" class="inline-block">
+                <div class="p-2 border-2 border-primary m-2 rounded-lg bg-light ">
+                    <div class="p-4">
+                      <div class="flex justify-start">
+                        <img :src="car.image" :alt="car.image_alt" class="border-2 border-primary rounded-lg object-cover h-[180px] w-[320px]" >
+                      </div>
+                      <div class="mt-4">
+                        <div class="flex justify-start">
+                          <h3 class="text-gray-700 font-semibold text-lg">{{ car.name }}</h3>
+                        </div>
+                        <div class="flex justify-start">
+                          <span class="text-gray-500 font-semibold text-sm">{{ "$" + car.price }}</span>
+                        </div>
+                      </div>
+                      <div class="flex justify-end">
+                        <button class="border-2 border-secondary bg-secondary-light rounded-lg px-1 text-lg hover:bg-secondary hover:text-secondary-light hover: border-secondary-effect" :onclick="window.open('/car#'+car.id)">View</button>
+                      </div>
+                    </div>
+                  </div>
+              </li>
+            </ul>
           </div>
           <div>
-            <div>
+            <div class="font-medium">
               Load More
             </div>
           </div>
         </div>
      </main>
     </div>
+  
+    <script>
+      let app = {        
+        data() {
+          return {
+            cars: [
+              {
+                id: 1,
+                name: '2017 Hyundai Santa-Fe',
+                price: 20499.09,
+                image: 'https://nationalcarsales.ca/wp-content/uploads/2019/04/2017-Hyundai-Santa-Fe-636728799301072657_1-690x326.jpg',
+                image_alt:"A red 2017 Hyundai Santa-Fe",
+                featued: true,
+                featuedLocation: 1
+              },
+              {
+                id: 2,
+                name: '2020 Ford Escape',
+                price: 39999.01,
+                image: 'https://vehiclephotos.b-cdn.net/photos/vehicles/250159/4760780-large.jpg',
+                image_alt:"A Gray 2020 Ford Escape",
+                featued: true,
+                featuedLocation: 2
+              },
+              {
+                id: 2,
+                name: '2020 Ford Escape',
+                price: 39999.01,
+                image: 'https://vehiclephotos.b-cdn.net/photos/vehicles/250159/4760780-large.jpg',
+                image_alt:"A Gray 2020 Ford Escape",
+                featued: true,
+                featuedLocation: 2
+              },
+              {
+                id: 2,
+                name: '2020 Ford Escape',
+                price: 39999.01,
+                image: 'https://vehiclephotos.b-cdn.net/photos/vehicles/250159/4760780-large.jpg',
+                image_alt:"A Gray 2020 Ford Escape",
+                featued: true,
+                featuedLocation: 2
+              }
+            ]
+          }
+        },
+        computed: {
+          getFeatured() {
+            return this.cars.filter(car => car.featued)
+            }
+          }
+        }
+
+      Vue.createApp(app).mount('#app')
+    </script>
   </body>
 </html>
